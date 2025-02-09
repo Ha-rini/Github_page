@@ -3,7 +3,7 @@ name: Daily Commit
 # Run this workflow once a day at 9:00 AM UTC (adjust the time as per your preference)
 on:
   schedule:
-    - cron: '42 12 * * *'
+    - cron: '47 12 * * *'
 
 jobs:
   daily-commit:
@@ -19,10 +19,6 @@ jobs:
         run: |
           # Create a simple file to commit
           echo "Daily update - $(date)" > update.txt
-
-          # Configure Git settings
-          git config --global user.name "GitHub Action Bot"
-          git config --global user.email "23f1000747@ds.study.iitm.ac.in"
 
           # Add, commit, and push the changes
           git add update.txt
