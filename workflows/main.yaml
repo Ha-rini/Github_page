@@ -1,0 +1,30 @@
+name: Daily Commit
+
+# Run this workflow once a day at 9:00 AM UTC (adjust the time as per your preference)
+on:
+  schedule:
+    - cron: '42 12 * * *'
+
+jobs:
+  daily-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step to check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step with your email included in the name
+      - name: "Commit changes with email: 23f1000747@ds.study.iitm.ac.in"
+        run: |
+          # Create a simple file to commit
+          echo "Daily update - $(date)" > update.txt
+
+          # Configure Git settings
+          git config --global user.name "GitHub Action Bot"
+          git config --global user.email "23f1000747@ds.study.iitm.ac.in"
+
+          # Add, commit, and push the changes
+          git add update.txt
+          git commit -m "Daily commit - $(date)"
+          git push
