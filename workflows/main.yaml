@@ -1,9 +1,8 @@
 name: Daily Commit
 
-# Run this workflow once a day at 9:00 AM UTC (adjust the time as per your preference)
 on:
   schedule:
-    - cron: '47 12 * * *'
+    - cron: '50 12 * * *'
 
 jobs:
   daily-commit:
