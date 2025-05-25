@@ -5,5 +5,5 @@ on: [push]
 jobs:
   test:
     steps:
-      - name: 23f1000747@ds.study.iitm.ac.in
-        run: echo "Hello, world!"
+       name: 23f1000747@ds.study.iitm.ac.in
+        run : echo "Hello, world!"
